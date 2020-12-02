@@ -1,3 +1,4 @@
+# We made our board like the number pad on a phone so it is easier to remember which numbers mean what box
 the_game_board = {'1': ' ' , '2': ' ' , '3': ' ' ,
             '4': ' ' , '5': ' ' , '6': ' ' ,
             '7': ' ' , '8': ' ' , '9': ' ' }
@@ -16,7 +17,7 @@ def printgame_board(game_board):
     print('-+-+-')
     print(game_board['7'] + '|' + game_board['8'] + '|' + game_board['9'])
 
-#Now we get to name our players
+# Now we get to name our players
 if __name__ == "__main__":
  
     print("Player 1")
@@ -27,7 +28,7 @@ if __name__ == "__main__":
     player2 = input("Enter the name : ")
     print("\n")
 
-# This is the function for determining where the X and Os are placed
+# This is the function for determining where the X and Os are going to be placed
 def game():
 
     turn = 'X'
@@ -36,7 +37,7 @@ def game():
 
     for i in range(10):
         printgame_board(the_game_board)
-        print("It's your move," + turn + ".Chose your place?")
+        print("It's your move," + turn + ".Choose your place?")
 
         move = input()        
 
@@ -49,48 +50,48 @@ def game():
 
         # This checks to see if anyone has has won after 5 moves.  The game will end if there is a win 
         if count >= 5:
-            if the_game_board['1'] == the_game_board['2'] == the_game_board['3'] != ' ': # all the way across the top ends the game
+            if the_game_board['1'] == the_game_board['2'] == the_game_board['3'] != ' ': # All the way across the top ends the game
                 printgame_board(the_game_board)
                 print("\nGame Over.\n")                
                 print("  " +turn + " has won. ")                
                 break
-            elif the_game_board['4'] == the_game_board['5'] == the_game_board['6'] != ' ': # game ends if  won across the middle
+            elif the_game_board['4'] == the_game_board['5'] == the_game_board['6'] != ' ': # Game ends if won across the middle
                 printgame_board(the_game_board)
                 print("\nGame Over.\n")                
                 print("  " +turn + " has won. ")
                 break
-            elif the_game_board['7'] == the_game_board['8'] == the_game_board['9'] != ' ': # all the way across the bottom wins and ends game
+            elif the_game_board['7'] == the_game_board['8'] == the_game_board['9'] != ' ': # All the way across the bottom wins and ends game
                 printgame_board(the_game_board)
                 print("\nGame Over.\n")                
                 print("  " +turn + " has won. ")
                 break
-            elif the_game_board['7'] == the_game_board['4'] == the_game_board['1'] != ' ': # left side down wins and ends game
+            elif the_game_board['7'] == the_game_board['4'] == the_game_board['1'] != ' ': # Left side down wins and ends game
                 printgame_board(the_game_board)
                 print("\nGame Over.\n")                
                 print("  " +turn + " has won. ")
                 break
-            elif the_game_board['8'] == the_game_board['5'] == the_game_board['2'] != ' ': # middle all the way down wins
+            elif the_game_board['8'] == the_game_board['5'] == the_game_board['2'] != ' ': # Middle all the way down wins
                 printgame_board(the_game_board)
                 print("\nGame Over.\n")                
                 print("  " +turn + " has won. ")
                 break
-            elif the_game_board['9'] == the_game_board['6'] == the_game_board['3'] != ' ': # right side down wins the game
+            elif the_game_board['9'] == the_game_board['6'] == the_game_board['3'] != ' ': # Right side down wins the game
                 printgame_board(the_game_board)
                 print("\nGame Over.\n")                
                 print("  " +turn + " has won. ")
                 break 
-            elif the_game_board['1'] == the_game_board['5'] == the_game_board['9'] != ' ': # a diagonal win ends the game
+            elif the_game_board['1'] == the_game_board['5'] == the_game_board['9'] != ' ': # A diagonal win ends the game
                 printgame_board(the_game_board)
                 print("\nGame Over.\n")                
                 print("  " +turn + " has won. ")
                 break
-            elif the_game_board['7'] == the_game_board['5'] == the_game_board['3'] != ' ': # a diagonal win ends the game
+            elif the_game_board['7'] == the_game_board['5'] == the_game_board['3'] != ' ': # A diagonal win ends the game
                 printgame_board(the_game_board)
                 print("\nGame Over.\n")                
                 print("  " +turn + " has won. ")
                 break 
 
-        # If the game_board is full and there is no winner then it is a tie.
+        # If the game_board is full and there is no winner then there is a tie.
         if count == 9:
             print("\nGame Over.\n")                
             print("Tie game")
@@ -101,7 +102,7 @@ def game():
         else:
             turn = 'X'        
     
-    # This is an option asking if you want to play another game
+    # This is an option asking if you would like to play another game!=
     restart = input("Would you like to play again?(y/n)")
     if restart == "y" or restart == "Y":  
         for key in game_board_keys:
